@@ -8,3 +8,10 @@ When Linnworks resolve this issue, you should disable this module as it will no 
 Caveats:
 
 It removes your ability to turn shipping emails on and off from the backend of Magento. And if for example you send shipments without tracking codes, this module WILL NOT send a shipping email in that event, it relies exclusively on the fact that you have tracking codes in all of your shipments. Open to push requests! :)
+
+Install:
+
+bin/magento module:enable BigHat_Tracking
+bin/magento setup:upgrade && bin/magento setup:di:compile && bin/magento setup:static-content:deploy en_US en_GB -f --jobs.
+
+Tested on M2.3.4
