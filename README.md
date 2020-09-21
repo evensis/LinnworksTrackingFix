@@ -1,6 +1,10 @@
 # LinnworksTrackingFix
-Fixes an issue with Linnworks currently (as of 22/09/2020), where the tracking information is not included in the shipping email from Magento. This is due to an improper implementation on the API and is currently on their low/medium priority list to be fixed (whenever that may be).
+Fixes an issue with Linnworks currently (as of 22/09/2020), where the tracking information is not included in the shipping email from Magento. This is due to an improper implementation on Magento's API and is currently on their low/medium priority list to be fixed (whenever that may be).
 
-You should disable the shipping email in Magento 2's store configuration, otherwise they will get two emails, one with the current problem without the tracking code and the email this sends on observing a tracking number being inserted into Magento 2.
+You should disable the shipping email in Magento 2's store configuration -> Sales -> Sales Emails, otherwise your customers will get two shipping emails, one with the current problem without the tracking code and the email this module sends on observing a tracking number being inserted into Magento 2.
 
-When Linnworks resolve this issue, you should disable this module at which point this module will become deprecated but the change Linnworks side will not cause a breaking change, it will continue sending as intended with the tracking code in tow.
+When Linnworks resolve this issue, you should disable this module as it will no longer be necessary. This module will not, however, cause a problem when Linnworks get around to fixing it their end. It will just send slightly later than Magento's design.
+
+Caveats:
+
+It removes your ability to turn shipping emails on and off from the backend of Magento. And if for example you send shipments without tracking codes, this module WILL NOT send a shipping email in that event, it relies exclusively on the fact that you have tracking codes in all of your shipments. Open to push requests! :)
