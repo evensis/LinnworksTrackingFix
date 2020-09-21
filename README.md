@@ -11,7 +11,6 @@ It removes your ability to turn shipping emails on and off from the backend of M
 
 Install:
 
-bin/magento module:enable BigHat_Tracking
-bin/magento setup:upgrade && bin/magento setup:di:compile && bin/magento setup:static-content:deploy en_US en_GB -f --jobs.
+bin/magento module:enable BigHat_Tracking && bin/magento setup:upgrade && bin/magento setup:di:compile && bin/magento setup:static-content:deploy en_US en_GB
 
 Tested on M2.3.4
